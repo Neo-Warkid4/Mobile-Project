@@ -4,16 +4,32 @@ using UnityEngine;
 
 public class Attractor : MonoBehaviour {
 
+	const float G = 667.4f;
+
+		public static List<Attractor> Attractors;
+
 	public Rigidbody rb;
 
 	void FixedUpdate ()
 	{
-		Attractor[] attractors = FindObjectsOfType<Attractor>();
-		foreach (Attractor attractor in attractors)
+		foreach (Attractor attractor in Attractors)
 		{
-			Attract(attractor);
+			if (attractor != this)
+	            Attract(attractor);
+	    }
+	}
 
-		}
+	void OnEnable ()
+	{
+		if (Attractors == null)
+			Attractors = new List<Attractor> ();
+
+		Attractors.Add(this);
+	}
+
+	void OnDisable ()
+	{
+		Attractors.Remove(this);
 	}
 
 	void Attract (Attractor objToAttract)
@@ -23,7 +39,10 @@ public class Attractor : MonoBehaviour {
 		Vector3 direction = rb.position - rbToAttract.position;
 		float distance = direction.magnitude;
 
-		float forceMagnitude = (rb.mass * rbToAttract.mass) / Mathf.Pow(distance, 2);
+		if (distance == 0f)
+			return;
+
+		float forceMagnitude = G * (rb.mass * rbToAttract.mass) / Mathf.Pow(distance, 2);
 		Vector3 force = direction.normalized * forceMagnitude;
 
 		rbToAttract.AddForce(force);
