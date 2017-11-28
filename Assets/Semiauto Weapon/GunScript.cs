@@ -1,5 +1,5 @@
-﻿using System.Collections;
-using UnityEngine;
+﻿using UnityEngine;
+using System.Collections;
 
 public class GunScript : MonoBehaviour
 {
@@ -23,12 +23,12 @@ public class GunScript : MonoBehaviour
         {
             if (hit.collider.tag == "Enemy")
             {
-                Enemy enemy = hit.collider.GetComponent<enemy>();
+                Enemy enemy = hit.collider.GetComponent<Enemy>();
                 enemy.health -= 1;
             }
         }
 
-        Debug.DrawRay(barrel.position, transform.forward * range, Color.green);)
+        Debug.DrawRay(barrel.position, transform.forward * range, Color.green);
         yield return null;
     }
 }
