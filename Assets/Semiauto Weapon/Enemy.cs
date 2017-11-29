@@ -7,7 +7,7 @@ public class Enemy : MonoBehaviour
 
     void Update ()
     {
-        Debug.Log(health.ToString());
+        //Debug.Log(health.ToString());
         if(health <= 0)
         {
             Destroy(gameObject);

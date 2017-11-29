@@ -125,7 +125,7 @@ GameObject:
   - component: {fileID: 151513639}
   - component: {fileID: 151513643}
   m_Layer: 0
-  m_Name: Cube
+  m_Name: Gun
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -209,8 +209,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 182fa4e976c8c334fb8fec075e2de051, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  barrel: {fileID: 0}
-  range: 0
+  barrel: {fileID: 1998754862}
+  range: 20
+  delay: 0.1
 --- !u!1 &1083173476
 GameObject:
   m_ObjectHideFlags: 0
@@ -287,6 +288,7 @@ GameObject:
   - component: {fileID: 1324365357}
   - component: {fileID: 1324365356}
   - component: {fileID: 1324365355}
+  - component: {fileID: 1324365359}
   m_Layer: 0
   m_Name: Cube (1)
   m_TagString: Enemy
@@ -360,6 +362,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1324365359
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1324365354}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 12de0ddddb760f245a660a41db2333ae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 5
 --- !u!1 &1545713221
 GameObject:
   m_ObjectHideFlags: 0
@@ -535,7 +549,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1998754862}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: Barrel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -548,7 +562,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1998754861}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0.537}
+  m_LocalPosition: {x: 0, y: 0, z: 0.51}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 151513642}
