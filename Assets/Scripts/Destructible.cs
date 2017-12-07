@@ -8,6 +8,12 @@ public class Destructible : MonoBehaviour {
 
     void OnMouseDown()
     {
+        //DestroyObject();
+
+    }
+
+    public void DestroyObject()
+    {
         Instantiate(destroyedVersion, transform.position, transform.rotation);
         Destroy(gameObject);
     }

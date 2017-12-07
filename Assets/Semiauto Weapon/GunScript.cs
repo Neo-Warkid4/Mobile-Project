@@ -29,6 +29,7 @@ public class GunScript : MonoBehaviour
             {
                 Enemy enemy = hit.collider.GetComponent<Enemy>();
                 enemy.health -= 1;
+                Debug.Log("I hit something");
             }
         }
 
